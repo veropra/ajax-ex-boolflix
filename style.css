@@ -1,0 +1,75 @@
+* {
+  font-family: 'Noto Sans', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 80px;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #202020;
+}
+
+.container{
+
+}
+
+.header_left{
+  float: left;
+}
+
+.header_left h1{
+  text-transform: uppercase;
+  color: #EA2027;
+  margin: 10px 10px;
+}
+
+.header_right {
+  float: right;
+  text-align: right;
+  margin: 20px auto;
+}
+
+.header_right input{
+  padding: 10px;
+  height: 35px;
+  width: 230px;
+  border-radius: 2px;
+  border: none;
+  background-color: #fff;
+}
+
+.header_right button{
+  padding: 5px;
+  height: 35px;
+  width: 80px;
+  margin-right: 10px;
+  border-radius: 2px;
+  background-color: #fff;
+  border: none;
+}
+
+.schede_film{
+  width: 1200px;
+  margin: 0 auto;
+  width: calc(100%/3);
+}
+
+
+.card_film{
+  float: left;
+  margin: 20px;
+  color: #fff;
+  width: 100px;
+  height: 200px;
+  margin-bottom: 100px;
+}
+
+#stars{
+  color: yellow;
+}
+
+#flag{
+  size: 20px;
+}
