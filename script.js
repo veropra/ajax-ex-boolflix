@@ -1,9 +1,11 @@
-/*MILESTONE 1/MILESTONE2:*/
 $(document).ready(function(){
   //Heandlebars
   var template_html = $('#film_template').html();
   var template_handlebars = Handlebars.compile(template_html);
   var flag_ok = ['en','it','fr','es','ja'];
+  var img_url_base = 'https://image.tmdb.org/t/p/';
+  var dimensione_poster = 'w185';
+
 
   //Funzione per la chiamata ajax per la ricerca dei film (una sola chiamata con 2 tipi)
   function ajaxCall(search_film, tipo){
@@ -27,6 +29,7 @@ $(document).ready(function(){
     //Funzione che stampa a video le informazioni dei film con i parametri che passo
     function output(information, tipo){
       var results = information.results;
+      var copertina_var = tipo.results;
 
       for (var i = 0; i < results.length; i++) {
         var voto = get_numero_stelline(parseFloat(results[i].vote_average));
@@ -34,18 +37,29 @@ $(document).ready(function(){
         var lingua = get_flag_language(results[i].original_language);
 
         if (tipo == "movie") {
+
+          if(results[i].poster_path == null){
+            var notAvailable = "img/image_not_available.png";
+          }else{
+            var notAvailable = img_url_base + dimensione_poster + results[i].poster_path;
+          };
+          //Dichiaro una variabile per il poster composta da immagine, dimensione e risultato
+          var url_poster = img_url_base + dimensione_poster + results[i].poster_path;
+
           var heandlebars_variable = {
             'titolo': results[i].title,
             'titolo_originale': results[i].original_title,
             'lingua_originale': lingua,
-            'rating': html_stelline
+            'rating': html_stelline,
+            'copertina': url_poster
           };
         } else {
           var heandlebars_variable = {
             'titolo': results[i].name,
             'titolo_originale': results[i].original_name,
             'lingua_originale': lingua,
-            'rating': html_stelline
+            'rating': html_stelline,
+            'copertina': url_poster
           };
         }
 
@@ -79,8 +93,6 @@ $(document).ready(function(){
     }
   });
 
-/*MILESTONE 2:*/
-
   //Genero una funzione per trasformare i numeri in interi per eccesso
   function get_numero_stelline (voto) {
     var stelline = Math.ceil(voto/2);
@@ -112,5 +124,3 @@ $(document).ready(function(){
   }
 
 });
-
-//MILESTONE 3:

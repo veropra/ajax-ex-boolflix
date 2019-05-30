@@ -51,19 +51,21 @@ body {
 }
 
 .schede_film{
-  width: 1200px;
+  width: 1000px;
   margin: 0 auto;
-  width: calc(100%/3);
+  width: 100%;
 }
 
 
 .card_film{
   float: left;
-  margin: 20px;
+  margin: 10px;
   color: #fff;
-  width: 100px;
-  height: 200px;
+  width: 150px;
+  height: 350px;
   margin-bottom: 100px;
+  border: 2px solid red;
+  margin-top: 100px;
 }
 
 #stars{
