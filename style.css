@@ -1,14 +1,13 @@
 * {
   font-family: 'Noto Sans', sans-serif;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
   height: 80px;
   font-family: 'Noto Sans', sans-serif;
   background-color: #202020;
+
 }
 
 .container{
@@ -21,7 +20,7 @@ body {
 
 .header_left h1{
   text-transform: uppercase;
-  color: #EA2027;
+  color: red;
   margin: 10px 10px;
 }
 
@@ -50,28 +49,31 @@ body {
   border: none;
 }
 
-.schede_film{
-  width: 1000px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-
 .card_film{
   float: left;
   margin: 10px;
   color: #fff;
-  width: 150px;
-  height: 350px;
+  width: 200px;
+  height: 630px;
   margin-bottom: 100px;
-  border: 2px solid red;
+  border: 2px solid #000;
   margin-top: 100px;
+  text-align: center;
+  box-shadow: 3px 3px 3px #000;
+}
+
+.card_film img{
+  margin-top: 10px;
 }
 
 #stars{
   color: yellow;
 }
 
-#flag{
-  size: 20px;
+#flag img{
+  width: 30px;
+}
+
+#title_color{
+  color: red;
 }
