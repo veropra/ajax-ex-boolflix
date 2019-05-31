@@ -2,7 +2,7 @@ $(document).ready(function(){
   //Heandlebars
   var template_html = $('#film_template').html();
   var template_handlebars = Handlebars.compile(template_html);
-  var flag_ok = ['en','it','fr','es','ja'];
+  var flag_ok = ['en','it','fr','es','ja','no', 'sv'];
   var img_url_base = 'https://image.tmdb.org/t/p/';
   var dimensione_poster = 'w185';
 
@@ -35,16 +35,16 @@ $(document).ready(function(){
         var html_stelline = get_html_stelline(voto);
         var lingua = get_flag_language(results[i].original_language);
 
-        if (tipo == "movie") {
-          //Se non c'è l'immagine, gli atribuisco il valore di un immagine NOT AVAILABLE
-          if(results[i].poster_path == null){
-            var notAvailable = "img/image_not_available.png";
-          }else{
-            var notAvailable = img_url_base + dimensione_poster + results[i].poster_path;
-          };
-          //Dichiaro una variabile per il poster composta da immagine, dimensione e risultato
+        if(results[i].poster_path == null){
+          console.log("CIAONEEEEE");
+          var url_poster = "img/image_not_available.png";
+        } else {
           var url_poster = img_url_base + dimensione_poster + results[i].poster_path;
+        }
 
+        if (tipo == "movie") {
+          //Se non c'è l'immagine, gli attribuisco il valore di un immagine NOT AVAILABLE
+          //Dichiaro una variabile per il poster composta da immagine, dimensione e risultato
           var heandlebars_variable = {
             'titolo': results[i].title,
             'titolo_originale': results[i].original_title,
@@ -53,7 +53,6 @@ $(document).ready(function(){
             'copertina': url_poster
           };
         } else {
-          var url_poster = img_url_base + dimensione_poster + results[i].poster_path;
           var heandlebars_variable = {
             'titolo': results[i].name,
             'titolo_originale': results[i].original_name,

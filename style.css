@@ -1,6 +1,8 @@
 * {
   font-family: 'Noto Sans', sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -10,8 +12,12 @@ body {
 
 }
 
-.container{
-
+header {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  background-color: #202020;
+  top: 0;
 }
 
 .header_left{
@@ -53,13 +59,14 @@ body {
   float: left;
   margin: 10px;
   color: #fff;
-  width: 200px;
+  width: 240px;
   height: 630px;
   margin-bottom: 100px;
   border: 2px solid #000;
   margin-top: 100px;
   text-align: center;
   box-shadow: 3px 3px 3px #000;
+  margin-left: 35px;
 }
 
 .card_film img{
