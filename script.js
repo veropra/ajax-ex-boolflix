@@ -53,6 +53,7 @@ $(document).ready(function(){
             'copertina': url_poster
           };
         } else {
+          var url_poster = img_url_base + dimensione_poster + results[i].poster_path;
           var heandlebars_variable = {
             'titolo': results[i].name,
             'titolo_originale': results[i].original_name,
