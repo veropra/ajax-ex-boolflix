@@ -6,7 +6,6 @@ $(document).ready(function(){
   var img_url_base = 'https://image.tmdb.org/t/p/';
   var dimensione_poster = 'w185';
 
-
   //Funzione per la chiamata ajax per la ricerca dei film (una sola chiamata con 2 tipi)
   function ajaxCall(search_film, tipo){
     //Dichiaro la variabile con gli oggetti obbligatori api-key e query
@@ -37,7 +36,7 @@ $(document).ready(function(){
         var lingua = get_flag_language(results[i].original_language);
 
         if (tipo == "movie") {
-
+          //Se non c'è l'immagine, gli atribuisco il valore di un immagine NOT AVAILABLE
           if(results[i].poster_path == null){
             var notAvailable = "img/image_not_available.png";
           }else{
@@ -78,7 +77,7 @@ $(document).ready(function(){
 
   //Funzione per resettare il contenitore
   function input() {
-    $('.schede_film .schede_tv').empty();
+    $('.container .schede_film').empty();
     var search_film = $('.input_search').val();
     for (var i = 0; i < tipoChiamata.length; i++) {
       ajaxCall(search_film, tipoChiamata[i]);
