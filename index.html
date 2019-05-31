@@ -33,11 +33,13 @@
       <!--template e handlebars-->
       <script id="film_template" type="text/x-handlebars-template">
         <div class="card_film">
-          <img src ="{{copertina}}" alt="{{titolo}}">
-          <h3 id="title_color">{{titolo}}</h3>
-          <p><span>Titolo originale: </span>{{titolo_originale}}</p>
-          <p><span>Lingua originale: </span><h5 id="flag">{{{lingua_originale}}}</h5></p>
-          <p><span>Voto: </span><h5 id="stars">{{{rating}}}</h5></p>
+          <img class="locandina_img" src ="{{copertina}}" alt="{{titolo}}">
+          <div class="locandina_info">
+            <h3 id="title_color">{{titolo}}</h3>
+            <p><span>Titolo originale: </span>{{titolo_originale}}</p>
+            <p><span>Lingua originale: </span><h5 id="flag">{{{lingua_originale}}}</h5></p>
+            <p><span>Voto: </span><h5 id="stars">{{{rating}}}</h5></p>
+          </div>
          </div>
         </div>
       </script>
