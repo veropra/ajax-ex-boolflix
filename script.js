@@ -36,7 +36,6 @@ $(document).ready(function(){
         var lingua = get_flag_language(results[i].original_language);
 
         if(results[i].poster_path == null){
-          console.log("CIAONEEEEE");
           var url_poster = "img/image_not_available.png";
         } else {
           var url_poster = img_url_base + dimensione_poster + results[i].poster_path;
@@ -120,6 +119,12 @@ $(document).ready(function(){
       bandiera = '<img src= "img/'+ lingua +'.png">';
     }
     return bandiera;
+  }
+  
+  //Appena si apre la pagina, richiamo l'API, per far apparire le card del film scelto da me,
+  //quindi per popolare subito la pagina
+  for (var i = 0; i < tipoChiamata.length; i++) {
+    ajaxCall("viking", tipoChiamata[i]);
   }
 
 });

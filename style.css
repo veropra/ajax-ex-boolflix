@@ -5,35 +5,48 @@
   padding: 0;
 }
 
-body {
+body{
   height: 80px;
   font-family: 'Noto Sans', sans-serif;
-  background-color: #202020;
-
+  background-color: #191919;
 }
 
-header {
+header{
+  font-family: 'Noto Sans', sans-serif;
   position: fixed;
-  height: 60px;
+  height: 80px;
   width: 100%;
-  background-color: #202020;
+  background-color: #191919;
   top: 0;
 }
 
 .header_left{
   float: left;
+  margin: 10px 50px;
 }
 
-.header_left h1{
+.header_left #title{
   text-transform: uppercase;
   color: red;
-  margin: 10px 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.header_left ul li{
+  color: #fff;
+  display: inline-block;
+  padding: 10px;
+  padding-top: 10px;
+  cursor: pointer;
+  font-size: 15px;
 }
 
 .header_right {
   float: right;
   text-align: right;
-  margin: 20px auto;
+  margin-top: 15px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .header_right input{
@@ -42,31 +55,38 @@ header {
   width: 230px;
   border-radius: 2px;
   border: none;
-  background-color: #fff;
+  background-color: #191919;
+  border: 1px solid #fff;
+  size: 10px;
+  font-size: 15px;
+  color: #fff;
 }
 
 .header_right button{
-  padding: 5px;
-  height: 35px;
-  width: 80px;
-  margin-right: 10px;
+  padding: 10px;
   border-radius: 2px;
-  background-color: #fff;
+  background-color: #191919;
+  color: #fff;
   border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.fa-bell, .fa-angle-down{
+  cursor: pointer;
+  padding: 10px;
 }
 
 .card_film{
   float: left;
-  margin: 10px;
+  margin: 180px 10px;
   color: #fff;
   max-width: 100%;
   max-height: 100%;
-  margin-bottom: 40px;
   border: 2px solid #000;
-  margin-top: 100px;
   text-align: center;
   box-shadow: 3px 3px 3px #000;
-  margin-left: 35px;
+  margin-bottom: 10px;
 }
 
 .locandina_img{
@@ -82,7 +102,6 @@ header {
 .card_film img .locandina_img.hidden{
   display: none;
 }
-
 
 #stars{
   color: yellow;
