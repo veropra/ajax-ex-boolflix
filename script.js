@@ -2,7 +2,7 @@ $(document).ready(function(){
   //Heandlebars
   var template_html = $('#film_template').html();
   var template_handlebars = Handlebars.compile(template_html);
-  var flag_ok = ['en','it','fr','es','ja','no', 'sv'];
+  var flag_ok = ['en','it','fr','es','ja','no', 'sv','ru','de'];
   var img_url_base = 'https://image.tmdb.org/t/p/';
   var dimensione_poster = 'w185';
 
@@ -120,11 +120,23 @@ $(document).ready(function(){
     }
     return bandiera;
   }
-  
+
   //Appena si apre la pagina, richiamo l'API, per far apparire le card del film scelto da me,
   //quindi per popolare subito la pagina
   for (var i = 0; i < tipoChiamata.length; i++) {
     ajaxCall("viking", tipoChiamata[i]);
   }
+
+  //Quando passo sopra alle locandine, con il mouse, fa scomparire l'immagine
+  //per mettere le informazione e quando lo tolgo, viceversa
+  $(document).on('mouseenter', '.card_film', function() {
+    $(this).children(".locandina_img").addClass('hidden');
+    $(this).children(".locandina_info").addClass('active');
+  });
+
+  $(document).on('mouseleave', '.card_film', function() {
+    $(this).children(".locandina_img").removeClass('hidden');
+    $(this).children(".locandina_info").removeClass('active');
+  });
 
 });
